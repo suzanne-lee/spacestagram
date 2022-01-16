@@ -60,6 +60,7 @@ export default function PicturePage() {
           objectPosition: "center",
           marginLeft: "10%",
           marginRight: "10%",
+          paddingBottom: "3%",
         }}
         src={src}
         alt={mediaItem.title}

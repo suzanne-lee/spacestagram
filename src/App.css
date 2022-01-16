@@ -34,6 +34,7 @@
 .loader {
   display: flex;
   justify-content: center;
+  padding-bottom: 3%;
 }
 
 @keyframes App-logo-spin {
