@@ -6,6 +6,9 @@ import "@shopify/polaris/build/esm/styles.css";
 import { AppProvider } from "@shopify/polaris";
 import enTranslations from "@shopify/polaris/locales/en.json";
 import { MediaCard } from "./MediaCard";
+import { Link } from "react-router-dom";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { TailSpin } from "react-loader-spinner";
 
 let dayjs = require("dayjs");
 
@@ -33,6 +36,7 @@ function App() {
     // response.data[0].explanation;
     // response.data[0].hdurl;
     // response.data[0].title;
+    response.data.reverse();
     setMediaItems(response.data);
   }
 
@@ -51,18 +55,28 @@ function App() {
   }, []);*/
 
   return (
-    <AppProvider i18n={enTranslations}>
-      <div className="App">
-        <header className="App-header">
-          <h1>Spacetagram {process.env.REACT_APP_HELLO}</h1>
-          <h3>Image-sharing from the final frontier</h3>
-          <p>Brought to you by NASA's Astronomy Photo of the Day (APOD) API</p>
-        </header>
+    <div className="App">
+      <header className="App-header">
+        <h1>Spacetagram:</h1>
+        <h3>Image-sharing from the final frontier</h3>
+        <p>Brought to you by NASA's Astronomy Photo of the Day (APOD) API</p>
+      </header>
+      {mediaItems.length == 0 ? (
+        <div className="loader">
+          <TailSpin
+            color="#96bf48"
+            arialLabel="loading"
+            width="100"
+            height="100"
+          />
+        </div>
+      ) : undefined}
+      <div>
         {mediaItems.map((mediaItem) => {
           return <MediaCard mediaItem={mediaItem} key={mediaItem.date} />;
         })}
       </div>
-    </AppProvider>
+    </div>
   );
 }
 

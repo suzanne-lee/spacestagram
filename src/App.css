@@ -4,17 +4,36 @@
 
 .App-header {
   background-color: #282c34;
+  color: white;
+  min-height: 50vh;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 120%;
+  margin-bottom: 5%;
+  /*
+  background-color: #282c34;
   min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: white;*/
+}
+.App-header p {
+  font-size: 0.5em;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {
