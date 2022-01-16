@@ -15,7 +15,8 @@
 }
 
 .date {
-  color: #858585;
+  color: rgba(140, 145, 150, 1);
+  line-height: 200%;
 }
 
 .icon-container {
@@ -23,14 +24,21 @@
 }
 
 button {
-  border: solid #9c9c9c 1px;
+  border: solid rgba(186, 191, 195, 1) 1px;
   border-radius: 4px;
   background: #fff;
   padding-top: 5px;
   padding-bottom: 5px;
+  height: 3.6rem;
+  margin-left: 5px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
 }
 
 button:hover {
   background: rgba(246, 246, 247, 1);
   cursor: pointer;
+}
+
+.Polaris-Button {
+  vertical-align: bottom;
 }

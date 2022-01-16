@@ -67,70 +67,70 @@ export function MediaCard(props) {
   return (
     <div>
       <Card>
-        <img
-          alt=""
-          width="100%"
-          height="300px"
-          style={{
-            objectFit: "cover",
-            objectPosition: "center",
-          }}
-          src={src}
-          alt={props.mediaItem.title}
-        />
+        <Link to={"/" + props.mediaItem.date}>
+          <img
+            alt=""
+            width="100%"
+            height="300px"
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+            src={src}
+            alt={props.mediaItem.title}
+          />
+        </Link>
         <div className="text-container">
           <h1>{props.mediaItem.title}</h1>
           <div className="date">{props.mediaItem.date}</div>
           <div className="description">{props.mediaItem.explanation}</div>
           <div className="icon-container">
-            <span>
-              <Modal
-                title="Get a shareable link"
-                open={active}
-                activator={activator}
-                onClose={toggleModal}
-                primaryAction={{
-                  content: "Close",
-                  onAction: toggleModal,
-                }}
-              >
-                <Modal.Section>
-                  <Stack vertical>
-                    <Stack.Item>
-                      <TextContainer>
-                        <p>Share this post!</p>
-                      </TextContainer>
-                    </Stack.Item>
-                    <Stack.Item fill>
-                      <TextField
-                        ref={node}
-                        label="Link"
-                        onFocus={handleFocus}
-                        value={
-                          window.location.origin + "/" + props.mediaItem.date
-                        }
-                        onChange={() => {}}
-                        autoComplete="off"
-                        connectedRight={
-                          <Button primary onClick={handleClick}>
-                            Copy link
-                          </Button>
-                        }
-                      />
-                    </Stack.Item>
-                  </Stack>
-                </Modal.Section>
+            <Modal
+              title="Get a shareable link"
+              open={active}
+              onClose={toggleModal}
+              primaryAction={{
+                content: "Close",
+                onAction: toggleModal,
+              }}
+            >
+              <Modal.Section>
+                <Stack vertical>
+                  <Stack.Item>
+                    <TextContainer>
+                      <p>Share this post!</p>
+                    </TextContainer>
+                  </Stack.Item>
+                  <Stack.Item fill>
+                    <TextField
+                      ref={node}
+                      label="Link"
+                      onFocus={handleFocus}
+                      value={
+                        window.location.origin + "/" + props.mediaItem.date
+                      }
+                      onChange={() => {}}
+                      autoComplete="off"
+                      connectedRight={
+                        <Button primary onClick={handleClick}>
+                          Copy Link
+                        </Button>
+                      }
+                    />
+                  </Stack.Item>
+                </Stack>
+              </Modal.Section>
 
-                {toastMarkup}
-              </Modal>
-              <button onClick={handleLike}>
-                <Icon
-                  source={HeartMajor}
-                  color={liked ? "critical" : "subdued"}
-                />
-              </button>
-            </span>
-            <Link to={"/" + props.mediaItem.date}>Click here</Link>
+              {toastMarkup}
+            </Modal>
+            {activator}
+            <button onClick={handleLike}>
+              <Icon
+                source={HeartMajor}
+                color={liked ? "critical" : "subdued"}
+              />
+            </button>
+            {/*<Link to={"/" + props.mediaItem.date}>Click here</Link> */}
           </div>
         </div>
       </Card>
