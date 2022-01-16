@@ -21,7 +21,11 @@ ReactDOM.render(
         <footer>
           Shopify Front-end Developer Intern Challenge - Summer 2022
           <br />
-          <a href="https://github.com/suzanne-lee/spacestagram" target="_blank">
+          <a
+            href="https://github.com/suzanne-lee/spacestagram"
+            target="_blank"
+            rel="noreferrer"
+          >
             Suzanne Lee
           </a>
         </footer>
