@@ -1,0 +1,35 @@
+.Polaris-Card {
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
+}
+
+.text-container {
+  padding: 5%;
+}
+
+.Polaris-Card h1 {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.date {
+  color: #858585;
+}
+
+.icon-container {
+  text-align: right;
+}
+
+button {
+  border: solid #9c9c9c 1px;
+  border-radius: 4px;
+  background: #fff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+button:hover {
+  background: rgba(246, 246, 247, 1);
+  cursor: pointer;
+}
