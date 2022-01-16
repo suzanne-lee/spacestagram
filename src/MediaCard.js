@@ -39,7 +39,7 @@ export function MediaCard(props) {
     navigator.clipboard
       .writeText(window.location.origin + "/" + props.mediaItem.date)
       .then(() => setToastActive(true));
-  }, []);
+  }, [props.mediaItem.date]);
 
   const handleFocus = useCallback(() => {
     if (node.current == null) {
@@ -48,10 +48,7 @@ export function MediaCard(props) {
     node.current.input.select();
   }, []);
 
-  const toggleModal = useCallback(
-    () => setActive((active) => !active),
-    [active]
-  );
+  const toggleModal = useCallback(() => setActive((active) => !active), []);
   const activator = <Button onClick={toggleModal}>Share</Button>;
 
   const toggleActive = useCallback(
@@ -68,7 +65,6 @@ export function MediaCard(props) {
       <Card>
         <Link to={"/" + props.mediaItem.date}>
           <img
-            alt=""
             width="100%"
             height="300px"
             style={{
