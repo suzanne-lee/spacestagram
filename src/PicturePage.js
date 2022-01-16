@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-let dayjs = require("dayjs");
+// let dayjs = require("dayjs");
 
 export default function PicturePage() {
   const apiKey = process.env.REACT_APP_API_KEY;
