@@ -34,7 +34,17 @@ export default function PicturePage() {
 
   return (
     <main style={{ padding: "1rem 0" }}>
-      <Link to="/">Return to Home</Link>
+      <Link
+        to="/"
+        style={{
+          display: "block",
+          marginLeft: "10%",
+          marginTop: "5%",
+          marginBottom: "3%",
+        }}
+      >
+        Return to Main Page
+      </Link>
       <Card>
         <div className="text-container">
           <h1>{mediaItem.title}</h1>
@@ -50,7 +60,6 @@ export default function PicturePage() {
           objectPosition: "center",
           marginLeft: "10%",
           marginRight: "10%",
-          paddingTop: "1%",
         }}
         src={src}
         alt={mediaItem.title}
