@@ -16,7 +16,7 @@ export default function PicturePage() {
   let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${params.date}&thumbs=true`;
 
   const src =
-    mediaItem.media_type == "image" ? mediaItem.url : mediaItem.thumbnail_url;
+    mediaItem.media_type === "image" ? mediaItem.url : mediaItem.thumbnail_url;
 
   function fxn(response) {
     console.log(response);
@@ -30,7 +30,7 @@ export default function PicturePage() {
 
   useEffect(() => {
     axios.get(url).then(fxn, onError);
-  }, []);
+  }, [url]);
 
   return (
     <main style={{ padding: "1rem 0" }}>
@@ -53,7 +53,6 @@ export default function PicturePage() {
         </div>
       </Card>
       <img
-        alt=""
         width="80%"
         style={{
           objectFit: "cover",

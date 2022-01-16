@@ -19,7 +19,7 @@ export function MediaCard(props) {
   const [toastActive, setToastActive] = useState(false);
 
   const src =
-    props.mediaItem.media_type == "image"
+    props.mediaItem.media_type === "image"
       ? props.mediaItem.url
       : props.mediaItem.thumbnail_url;
 

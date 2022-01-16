@@ -43,7 +43,7 @@ function App() {
 
   useEffect(() => {
     axios.get(url).then(fxn, onError);
-  }, []);
+  }, [url]);
 
   /*
   useEffect(() => {
@@ -57,7 +57,7 @@ function App() {
         <h3>Image-sharing from the final frontier</h3>
         <p>Brought to you by NASA's Astronomy Photo of the Day (APOD) API</p>
       </header>
-      {mediaItems.length == 0 ? (
+      {mediaItems.length === 0 ? (
         <div className="loader">
           <TailSpin
             color="#96bf48"
