@@ -43,7 +43,7 @@ export default function PicturePage() {
           marginBottom: "3%",
         }}
       >
-        Return to Main Page
+        &lt;&lt; Spacestagram Main Page
       </Link>
       <Card>
         <div className="text-container">

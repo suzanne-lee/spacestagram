@@ -93,7 +93,7 @@ export function MediaCard(props) {
                 <Stack vertical>
                   <Stack.Item>
                     <TextContainer>
-                      <p>Share this post!</p>
+                      <p>Share this image!</p>
                     </TextContainer>
                   </Stack.Item>
                   <Stack.Item fill>
