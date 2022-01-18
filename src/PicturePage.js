@@ -4,14 +4,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-// let dayjs = require("dayjs");
-
 export default function PicturePage() {
   const apiKey = process.env.REACT_APP_API_KEY;
   const params = useParams();
   let [mediaItem, setMediaItem] = useState([]);
-  //let now = dayjs();
-  //let today = now.format("YYYY-MM-DD");
 
   let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${params.date}&thumbs=true`;
 
@@ -19,7 +15,6 @@ export default function PicturePage() {
     mediaItem.media_type === "image" ? mediaItem.url : mediaItem.thumbnail_url;
 
   function fxn(response) {
-    console.log(response);
     setMediaItem(response.data);
   }
 

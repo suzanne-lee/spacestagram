@@ -14,24 +14,13 @@ function App() {
   const apiKey = process.env.REACT_APP_API_KEY;
   let now = dayjs();
 
-  //  let now = new Date();
   let today = now.format("YYYY-MM-DD");
-  console.log(today);
-
-  //let yesterday = now.subtract(1, "day");
-  //console.log(yesterday.format("YYYY-MM-DD"));
 
   let _25DaysAgo = now.subtract(24, "day").format("YYYY-MM-DD");
-  console.log(_25DaysAgo);
 
   let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&start_date=${_25DaysAgo}&end_date=${today}&thumbs=true`;
 
   function fxn(response) {
-    console.log(response);
-    // response.data[0].date;
-    // response.data[0].explanation;
-    // response.data[0].hdurl;
-    // response.data[0].title;
     response.data.reverse();
     setMediaItems(response.data);
   }
@@ -44,11 +33,6 @@ function App() {
   useEffect(() => {
     axios.get(url).then(fxn, onError);
   }, [url]);
-
-  /*
-  useEffect(() => {
-    axios.get(urlYesterday).then(fxn);
-  }, []);*/
 
   return (
     <div className="App">
