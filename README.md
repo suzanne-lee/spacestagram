@@ -1,29 +1,47 @@
-# Getting Started with Create React App
+# Spacestagram 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Challenge
+Build a web application that uses one of NASA’s image APIs to fetch and display images and allow the user to “like” and “unlike” their favourite images.
 
-## Available Scripts
+### Description
+The Spacestagram web application is built using HTML, CSS, Javascript, and ReactJS. See below for the dependencies. The website displays 25 images from NASA’s Astronomy Photo of the Day (APOD) API (24 days ago to today). The user can “like” and “unlike” images by clicking on the heart button. Users can share a particular image and its descriptive data (title, date, description) by clicking the Share button and copying the link provided. The user can also view a full (un-cropped) version of the image and its descriptive data by clicking on the image.
 
-In the project directory, you can run:
+**[Click here to view the hosted project.](https://hopeful-poitras-f3fe16.netlify.app/)** 👽🪐
 
-### `npm start`
+### Requirements
+- Fetch data from one of NASA’s API’s and display resulting images 
+- Display descriptive data for each image (title, date, description)
+- Like image
+- Unlike image
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Additional Features Implemented
+- Display loading spinner while waiting for API to return data
+- Create shareable links for each image and its descriptive data
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Future Improvements
+- Pagination
+    - The landing page only displays 25 images.
+- Date picker
+    - If the user would like to view the Photo of the Day from more than 25 days ago, they can visit `https://hopeful-poitras-f3fe16.netlify.app/{YYYY-MM-DD}`. (e.g. https://hopeful-poitras-f3fe16.netlify.app/1997-11-26) 
+- Custom error page
+    - Such as a Not Found page for dates that are too old or future dates
 
-### `npm run build`
+## How to Set Up
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Download and install Node.js and npm (LTS): https://nodejs.org/en/
+2. Install Git
+3. Generate a NASA API key: https://api.nasa.gov/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Steps
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. `git clone https://github.com/suzanne-lee/spacestagram.git`
+1. `cd spacestagram`
+1. `npm install`
+1. `cp .env.sample .env`
+1. `vi .env`
+1. Replace `PASTE_API_KEY_HERE` with your NASA API key
+1. Save and exit 
+1. `npm run start`
+1. Your browser should open [http://localhost:3000](http://localhost:3000) 🥳🎉
