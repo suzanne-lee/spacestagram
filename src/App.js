@@ -1,24 +1,22 @@
-import "./App.css";
-import axios from "axios";
 import { useEffect, useState } from "react";
-import "@shopify/polaris/build/esm/styles.css";
-import { MediaCard } from "./MediaCard";
+import axios from "axios";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { TailSpin } from "react-loader-spinner";
+import "./App.css";
+import { MediaCard } from "./MediaCard";
+import "@shopify/polaris/build/esm/styles.css";
 
-let dayjs = require("dayjs");
+const dayjs = require("dayjs");
 
 function App() {
-  let [mediaItems, setMediaItems] = useState([]);
-
   const apiKey = process.env.REACT_APP_API_KEY;
-  let now = dayjs();
+  const [mediaItems, setMediaItems] = useState([]);
 
-  let today = now.format("YYYY-MM-DD");
+  const now = dayjs();
+  const today = now.format("YYYY-MM-DD");
+  const _25DaysAgo = now.subtract(24, "day").format("YYYY-MM-DD");
 
-  let _25DaysAgo = now.subtract(24, "day").format("YYYY-MM-DD");
-
-  let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&start_date=${_25DaysAgo}&end_date=${today}&thumbs=true`;
+  const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&start_date=${_25DaysAgo}&end_date=${today}&thumbs=true`;
 
   function fxn(response) {
     response.data.reverse();

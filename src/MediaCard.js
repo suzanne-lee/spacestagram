@@ -1,3 +1,6 @@
+import React, { useCallback, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import "./MediaCard.css";
 import {
   Card,
   Button,
@@ -6,12 +9,9 @@ import {
   TextContainer,
   TextField,
   Toast,
+  Icon,
 } from "@shopify/polaris";
-import "./MediaCard.css";
-import { Icon } from "@shopify/polaris";
 import { HeartMajor } from "@shopify/polaris-icons";
-import { Link } from "react-router-dom";
-import React, { useCallback, useRef, useState } from "react";
 
 export function MediaCard(props) {
   const [liked, setLiked] = useState(false);
@@ -25,11 +25,7 @@ export function MediaCard(props) {
 
   function handleLike(e) {
     e.preventDefault();
-    if (liked) {
-      setLiked(false);
-    } else {
-      setLiked(true);
-    }
+    liked ? setLiked(false) : setLiked(true);
   }
 
   const node = useRef(null);

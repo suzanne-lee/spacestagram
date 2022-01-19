@@ -1,16 +1,15 @@
-import { Card } from "@shopify/polaris";
-import { useParams } from "react-router-dom";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
+import { Card } from "@shopify/polaris";
 
 export default function PicturePage() {
   const apiKey = process.env.REACT_APP_API_KEY;
   const params = useParams();
-  let [mediaItem, setMediaItem] = useState([]);
-  let [hasError, setHasError] = useState(false);
+  const [mediaItem, setMediaItem] = useState([]);
+  const [hasError, setHasError] = useState(false);
 
-  let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${params.date}&thumbs=true`;
+  const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${params.date}&thumbs=true`;
 
   const src =
     mediaItem.media_type === "image" ? mediaItem.url : mediaItem.thumbnail_url;
@@ -22,7 +21,6 @@ export default function PicturePage() {
   function onError(e) {
     // console.error("e", Object.keys(e));
     // console.error("e", e.response);
-
     setHasError(true);
   }
 
