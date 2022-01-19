@@ -22,9 +22,9 @@ The Spacestagram web application is built using HTML, CSS, Javascript, and React
 - Pagination
     - The landing page only displays 25 images.
 - Date picker
-    - If the user would like to view the Photo of the Day from more than 25 days ago, they can visit `https://hopeful-poitras-f3fe16.netlify.app/{YYYY-MM-DD}`. (e.g. https://hopeful-poitras-f3fe16.netlify.app/1997-11-26) 
-- Custom error page
-    - Such as a Not Found page for dates that are too old or future dates
+    - If the user would like to view the Photo of the Day from more than 25 days ago, they can visit `https://hopeful-poitras-f3fe16.netlify.app/{YYYY-MM-DD}`. (e.g. https://hopeful-poitras-f3fe16.netlify.app/1997-11-26). Note: The Photo of the Day can be viewed for any date between 1995-06-20 and today. The API does not provide an image for 1995-06-19 and prior.
+- Embed videos
+    - The APOD API may return an image or a video. Currently, if the Photo of the Day is actually a video, only the thumbnail is displayed.
 
 ## How to Set Up
 
