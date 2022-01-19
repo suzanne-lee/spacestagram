@@ -15,7 +15,7 @@ import { HeartMajor } from "@shopify/polaris-icons";
 
 export function MediaCard(props) {
   const [liked, setLiked] = useState(false);
-  const [active, setActive] = useState(false);
+  const [modalActive, setModalActive] = useState(false);
   const [toastActive, setToastActive] = useState(false);
 
   const src =
@@ -44,7 +44,10 @@ export function MediaCard(props) {
     node.current.input.select();
   }, []);
 
-  const toggleModal = useCallback(() => setActive((active) => !active), []);
+  const toggleModal = useCallback(
+    () => setModalActive((modalActive) => !modalActive),
+    []
+  );
   const activator = <Button onClick={toggleModal}>Share</Button>;
 
   const toggleActive = useCallback(
@@ -78,7 +81,7 @@ export function MediaCard(props) {
           <div className="icon-container">
             <Modal
               title="Get a shareable link"
-              open={active}
+              open={modalActive}
               onClose={toggleModal}
               primaryAction={{
                 content: "Close",
