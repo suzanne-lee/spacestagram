@@ -29,8 +29,8 @@ export default function PicturePage() {
       <Card>
         <div className="text-container">
           <h1>{mediaItem.title}</h1>
-          <div className="date">{mediaItem.date}</div>
-          <div className="description">{mediaItem.explanation}</div>
+          <p className="date">{mediaItem.date}</p>
+          <p className="description">{mediaItem.explanation}</p>
         </div>
       </Card>
       <img
@@ -65,17 +65,19 @@ export default function PicturePage() {
 
   return (
     <main style={{ padding: "1rem 0" }}>
-      <Link
-        to="/"
-        style={{
-          display: "block",
-          marginLeft: "10%",
-          marginTop: "5%",
-          marginBottom: "3%",
-        }}
-      >
-        &lt;&lt; Spacestagram Main Page
-      </Link>
+      <p>
+        <Link
+          to="/"
+          style={{
+            display: "block",
+            marginLeft: "10%",
+            marginTop: "5%",
+            marginBottom: "3%",
+          }}
+        >
+          &lt;&lt; Spacestagram Main Page
+        </Link>
+      </p>
       {mediaCard}
       {errorCard}
     </main>

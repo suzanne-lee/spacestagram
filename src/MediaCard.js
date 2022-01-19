@@ -73,8 +73,8 @@ export function MediaCard(props) {
         </Link>
         <div className="text-container">
           <h1>{props.mediaItem.title}</h1>
-          <div className="date">{props.mediaItem.date}</div>
-          <div className="description">{props.mediaItem.explanation}</div>
+          <p className="date">{props.mediaItem.date}</p>
+          <p className="description">{props.mediaItem.explanation}</p>
           <div className="icon-container">
             <Modal
               title="Get a shareable link"
@@ -121,7 +121,6 @@ export function MediaCard(props) {
                 color={liked ? "critical" : "subdued"}
               />
             </button>
-            {/*<Link to={"/" + props.mediaItem.date}>Click here</Link> */}
           </div>
         </div>
       </Card>
