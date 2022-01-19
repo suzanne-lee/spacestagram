@@ -8,7 +8,12 @@ export default function LikeButton(props) {
 
   function handleLike(e) {
     e.preventDefault();
-    liked ? setLiked(false) : setLiked(true);
+
+    if (liked) {
+      setLiked(false);
+    } else {
+      setLiked(true);
+    }
   }
 
   return (

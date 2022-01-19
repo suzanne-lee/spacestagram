@@ -14,7 +14,7 @@ export default function PicturePage() {
   const src =
     mediaItem.media_type === "image" ? mediaItem.url : mediaItem.thumbnail_url;
 
-  function fxn(response) {
+  function onResponse(response) {
     setMediaItem(response.data);
   }
 
@@ -60,7 +60,7 @@ export default function PicturePage() {
   ) : null;
 
   useEffect(() => {
-    axios.get(url).then(fxn, onError);
+    axios.get(url).then(onResponse, onError);
   }, [url]);
 
   return (

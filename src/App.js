@@ -18,7 +18,7 @@ function App() {
 
   const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&start_date=${_25DaysAgo}&end_date=${today}&thumbs=true`;
 
-  function fxn(response) {
+  function onResponse(response) {
     response.data.reverse();
     setMediaItems(response.data);
   }
@@ -29,7 +29,7 @@ function App() {
   }
 
   useEffect(() => {
-    axios.get(url).then(fxn, onError);
+    axios.get(url).then(onResponse, onError);
   }, [url]);
 
   return (
