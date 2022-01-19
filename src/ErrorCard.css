@@ -1,0 +1,19 @@
+.Polaris-Card {
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
+  margin-bottom: 3%;
+}
+
+.text-container {
+  padding: 3%;
+}
+
+.Polaris-Card h1 {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.message {
+  line-height: 200%;
+}
