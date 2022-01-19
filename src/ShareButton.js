@@ -13,11 +13,6 @@ export default function ShareButton(props) {
   const [modalActive, setModalActive] = useState(false);
   const [toastActive, setToastActive] = useState(false);
 
-  const src =
-    props.mediaItem.media_type === "image"
-      ? props.mediaItem.url
-      : props.mediaItem.thumbnail_url;
-
   const node = useRef(null);
 
   const handleClick = useCallback(() => {
@@ -51,7 +46,7 @@ export default function ShareButton(props) {
   ) : null;
 
   return (
-    <div>
+    <React.Fragment>
       <Modal
         title="Get a shareable link"
         open={modalActive}
@@ -88,6 +83,6 @@ export default function ShareButton(props) {
         {toastMarkup}
       </Modal>
       {activator}
-    </div>
+    </React.Fragment>
   );
 }

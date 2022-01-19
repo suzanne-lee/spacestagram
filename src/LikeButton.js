@@ -12,10 +12,8 @@ export default function LikeButton(props) {
   }
 
   return (
-    <div>
-      <button onClick={handleLike}>
-        <Icon source={HeartMajor} color={liked ? "critical" : "subdued"} />
-      </button>
-    </div>
+    <button onClick={handleLike}>
+      <Icon source={HeartMajor} color={liked ? "critical" : "subdued"} />
+    </button>
   );
 }
