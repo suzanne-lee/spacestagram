@@ -26,8 +26,6 @@ function App() {
   }
 
   function onError(e) {
-    //console.error("e", Object.keys(e));
-    //console.error("e", e.response);
     setHasError(true);
   }
 
