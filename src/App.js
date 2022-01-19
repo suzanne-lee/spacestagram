@@ -4,6 +4,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { TailSpin } from "react-loader-spinner";
 import "./App.css";
 import { MediaCard } from "./MediaCard";
+import { ErrorCard } from "./ErrorCard";
 import "@shopify/polaris/build/esm/styles.css";
 
 const dayjs = require("dayjs");
@@ -11,6 +12,7 @@ const dayjs = require("dayjs");
 function App() {
   const apiKey = process.env.REACT_APP_API_KEY;
   const [mediaItems, setMediaItems] = useState([]);
+  const [hasError, setHasError] = useState(false);
 
   const now = dayjs();
   const today = now.format("YYYY-MM-DD");
@@ -24,13 +26,18 @@ function App() {
   }
 
   function onError(e) {
-    console.error("e", Object.keys(e));
-    console.error("e", e.response);
+    //console.error("e", Object.keys(e));
+    //console.error("e", e.response);
+    setHasError(true);
   }
 
   useEffect(() => {
     axios.get(url).then(onResponse, onError);
   }, [url]);
+
+  const errorCard = hasError ? (
+    <ErrorCard message="Something went wrong. Try again later!" />
+  ) : null;
 
   return (
     <div className="App">
@@ -39,7 +46,7 @@ function App() {
         <h3>Image-sharing from the final frontier</h3>
         <p>Brought to you by NASA's Astronomy Photo of the Day (APOD) API</p>
       </header>
-      {mediaItems.length === 0 ? (
+      {mediaItems.length === 0 && !hasError ? (
         <div className="loader">
           <TailSpin
             color="#96bf48"
@@ -54,6 +61,7 @@ function App() {
           return <MediaCard mediaItem={mediaItem} key={mediaItem.date} />;
         })}
       </div>
+      {errorCard}
     </div>
   );
 }

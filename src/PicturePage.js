@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { Card } from "@shopify/polaris";
+import { ErrorCard } from "./ErrorCard";
 
 export default function PicturePage() {
   const apiKey = process.env.REACT_APP_API_KEY;
@@ -49,14 +50,7 @@ export default function PicturePage() {
   ) : null;
 
   const errorCard = hasError ? (
-    <Card>
-      <div className="text-container">
-        <h1>Oops!</h1>
-        <div className="description">
-          We couldn't load the image for the given date.
-        </div>
-      </div>
-    </Card>
+    <ErrorCard message="Are you a time traveller? We couldn't load the image for the given date." />
   ) : null;
 
   useEffect(() => {
