@@ -4,7 +4,7 @@
 Build a web application that uses one of NASA’s image APIs to fetch and display images and allow the user to “like” and “unlike” their favourite images.
 
 ### Description
-The Spacestagram web application is built using HTML, CSS, Javascript, and ReactJS. See below for the dependencies. The website displays 25 images from NASA’s Astronomy Photo of the Day (APOD) API (24 days ago to today). The user can “like” and “unlike” images by clicking on the heart button. Users can share a particular image and its descriptive data (title, date, description) by clicking the Share button and copying the link provided. The user can also view a full (un-cropped) version of the image and its descriptive data by clicking on the image.
+The Spacestagram web application is built using HTML, CSS, Javascript, and ReactJS. The webpage displays 25 images from NASA’s Astronomy Photo of the Day (APOD) API (24 days ago to today). The user can “like” and “unlike” images by clicking on the heart button. Users can share a particular image and its descriptive data (title, date, description) by clicking the Share button and copying the link provided. The user can also view a full (un-cropped) version of the image and its descriptive data by clicking on the image.
 
 **[Click here to view the hosted project.](https://hopeful-poitras-f3fe16.netlify.app/)** 👽🪐
 
